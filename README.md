@@ -42,7 +42,7 @@ You can import this dependency into your gradle projects by making the following
 ```kotlin
 fun main() {
   val input = "8518b51a6234a3defa00000000181c008518b61a6234a3e8fa00000000181c00"
-  val dataPoints = Translator.translate(inputShort)
+  val dataPoints = Translator.translate(input)
   
   // output
   /*
