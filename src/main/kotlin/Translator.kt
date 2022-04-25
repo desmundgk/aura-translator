@@ -6,7 +6,7 @@ import model.DataPoint
 
 object Translator {
 
-    fun translate(input: String): List<DataPoint> {
+    fun toDataPoints(input: String): List<DataPoint> {
         val dataPoints = arrayListOf<DataPoint>()
         val mapper: ObjectMapper = CBORMapper()
         val byteArrayValueShort = input.decodeHex()
@@ -32,6 +32,22 @@ object Translator {
             offset += mapper.writeValueAsBytes(tree).size
         }
         return dataPoints.toList()
+    }
+
+    fun toNodes(input: String): List<JsonNode> {
+        val nodeList = arrayListOf<JsonNode>()
+        val mapper: ObjectMapper = CBORMapper()
+        val byteArrayValueShort = input.decodeHex()
+
+        var offset = 0
+        while (offset < byteArrayValueShort.size) {
+            val myDataArray =
+                mapper.readValue(byteArrayValueShort, offset, byteArrayValueShort.size, Array<Any>::class.java)
+            val tree = mapper.valueToTree<JsonNode>(myDataArray)
+            nodeList.add(tree)
+            offset += mapper.writeValueAsBytes(tree).size
+        }
+        return nodeList.toList()
     }
 
 }
