@@ -7,14 +7,14 @@ plugins {
 }
 
 group = "net.georgekent.lib.aura_translator"
-version = "1.0.0"
+version = "1.1.0"
 
 publishing {
     publications {
         create<MavenPublication>("auraTranslator") {
             groupId = "net.georgekent.lib"
             artifactId = "aura_translator"
-            version = "1.0.0"
+            version = "1.1.0"
             from(components["java"])
         }
     }
