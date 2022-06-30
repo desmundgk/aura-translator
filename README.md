@@ -41,17 +41,16 @@ You can import this dependency into your gradle projects by making the following
 
 ```kotlin
 fun main() {
-  val input = "8518b51a6234a3defa00000000181c008518b61a6234a3e8fa00000000181c00"
+  val input = "8618B51A6234A3DEF90000F90000181C1850"
  
   val dataPoints = Translator.toDataPoints(input)
   /* output
-  DataPoint(index=181, timestamp=1647616990, meterReading=0.0, temperature=28, alarmStatus=0)
-  DataPoint(index=182, timestamp=1647617000, meterReading=0.0, temperature=28, alarmStatus=0)
+  DataPoint(index=181, timestamp=1647616990, meterReading=0.0, meterConsumptions=0.0, temperature=28, batteryLevel=80)
   */
   
   val nodes = Translator.toNodes(input)
   /* output
-  [[181,1647616990,0.0,28,0], [182,1647617000,0.0,28,0]]
+  [181,1647616990,0.0,0.0,28,80]
   */
 }
 ```
