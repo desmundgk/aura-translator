@@ -21,10 +21,11 @@ object Translator {
             myDataArray.forEachIndexed { index, data ->
                 when (index) {
                     0 -> dp.index = data as Int
-                    1 -> dp.timestamp = (data as Number).toLong()
-                    2 -> dp.meterReading = (data as Number).toDouble()
-                    3 -> dp.temperature = data as Int
-                    4 -> dp.alarmStatus = data as Int
+                    1 -> dp.timestamp = data as Int
+                    2 -> dp.meterReading = (data as Number).toFloat()
+                    3 -> dp.meterConsumptions = (data as Number).toFloat()
+                    4 -> dp.temperature = data as Int
+                    5 -> dp.batteryLevel = data as Int
                 }
             }
             dataPoints.add(dp)
