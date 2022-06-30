@@ -28,13 +28,13 @@ You can import this dependency into your gradle projects by making the following
    For `build.gradle`:
 
    ```groovy
-   dependencies { implementation 'com.github.GeorgeKentMalaysia:aura-translator:1.1.0' }
+   dependencies { implementation 'com.github.GeorgeKentMalaysia:aura-translator:1.2.0' }
    ```
 
    For `build.gradle.kts`:
 
    ```kotlin
-   dependencies { implementation ("com.github.GeorgeKentMalaysia:aura-translator:1.1.0") }
+   dependencies { implementation ("com.github.GeorgeKentMalaysia:aura-translator:1.2.0") }
    ```
 
 ## How to use
