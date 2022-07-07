@@ -96,7 +96,7 @@ fun main() {
     val alarm = AlarmTranslator.toObject(input)
     println(alarm)
     /** output
-    Alarm(leakageDetection=false, noFlowDetection=false, burstDetection=false, backFlowDetection=false, batteryLow=false, faultySensor=false, wireCutDetection=false, tiltDetection=false, magnetTamper=true)
+    Alarm(leakageDetection=true, noFlowDetection=true, burstDetection=false, backFlowDetection=false, batteryLow=false, faultySensor=true, wireCutDetection=true, tiltDetection=true, magnetTamper=true)
      */
 
     val alarmNode = AlarmTranslator.toNodes(input)
