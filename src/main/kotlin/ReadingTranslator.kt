@@ -2,22 +2,21 @@ import Util.decodeHex
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.cbor.databind.CBORMapper
-import model.DataPoint
+import model.Reading
 
-object Translator {
-
-    fun toDataPoints(input: String): List<DataPoint> {
-        val dataPoints = arrayListOf<DataPoint>()
+/* This is a translator for LWM2M object 10376 instance 0 Record object */
+object ReadingTranslator {
+    fun toObject(input: String): List<Reading> {
+        val dataPoints = arrayListOf<Reading>()
         val mapper: ObjectMapper = CBORMapper()
         val byteArrayValueShort = input.decodeHex()
 
         var offset = 0
-        var dp: DataPoint
+        var dp: Reading
         while (offset < byteArrayValueShort.size) {
-            val myDataArray =
-                mapper.readValue(byteArrayValueShort, offset, byteArrayValueShort.size, Array<Any>::class.java)
+            val myDataArray = mapper.readValue(byteArrayValueShort, offset, byteArrayValueShort.size, Array<Any>::class.java)
             val tree = mapper.valueToTree<JsonNode>(myDataArray)
-            dp = DataPoint()
+            dp = Reading()
             myDataArray.forEachIndexed { index, data ->
                 when (index) {
                     0 -> dp.index = data as Int

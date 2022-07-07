@@ -14,7 +14,7 @@ publishing {
         create<MavenPublication>("auraTranslator") {
             groupId = "net.georgekent.lib"
             artifactId = "aura_translator"
-            version = "1.2.0"
+            version = "1.3.0"
             from(components["java"])
         }
     }
@@ -36,4 +36,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-cbor:1.3.2")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.13.2")
+    implementation("junit:junit:4.13.1")
+
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.0")
 }
