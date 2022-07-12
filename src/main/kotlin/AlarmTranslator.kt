@@ -13,11 +13,13 @@ object AlarmTranslator {
         return mapper.readValue(byteArrayValueShort, offset, byteArrayValueShort.size, Int::class.java)
     }
 
+    @JvmStatic
     fun toObject(input: String): Alarm {
         val rawAlarm = translate(input)
         return Alarm(rawAlarm)
     }
 
+    @JvmStatic
     fun toNodes(input: String): ArrayList<Int> {
         val alarms = ArrayList<Int>()
         val rawAlarm = translate(input)

@@ -2,12 +2,12 @@ import Util.decodeHex
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.cbor.databind.CBORMapper
-import model.Reading
 import model.Status
 
 /* This is a translator for LWM2M object 10376 instance 1 Record object */
 object StatusTranslator {
 
+    @JvmStatic
     fun toObject(input: String): Status {
         val mapper: ObjectMapper = CBORMapper()
         val byteArrayValueShort = input.decodeHex()
@@ -60,6 +60,7 @@ object StatusTranslator {
         return dp
     }
 
+    @JvmStatic
     fun toNodes(input: String): JsonNode {
         val mapper: ObjectMapper = CBORMapper()
         val byteArrayValueShort = input.decodeHex()
