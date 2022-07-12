@@ -1,3 +1,5 @@
+package translator
+
 import Util.decodeHex
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -6,7 +8,6 @@ import model.Reading
 
 /* This is a translator for LWM2M object 10376 instance 0 Record object */
 object ReadingTranslator {
-    @JvmStatic
     fun toObject(input: String): List<Reading> {
         val dataPoints = arrayListOf<Reading>()
         val mapper: ObjectMapper = CBORMapper()
@@ -35,7 +36,6 @@ object ReadingTranslator {
         return dataPoints.toList()
     }
 
-    @JvmStatic
     fun toNodes(input: String): List<JsonNode> {
         val nodeList = arrayListOf<JsonNode>()
         val mapper: ObjectMapper = CBORMapper()

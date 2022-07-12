@@ -1,3 +1,5 @@
+package translator
+
 import Util.decodeHex
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -7,7 +9,6 @@ import model.Status
 /* This is a translator for LWM2M object 10376 instance 1 Record object */
 object StatusTranslator {
 
-    @JvmStatic
     fun toObject(input: String): Status {
         val mapper: ObjectMapper = CBORMapper()
         val byteArrayValueShort = input.decodeHex()
