@@ -14,7 +14,7 @@ publishing {
         create<MavenPublication>("auraTranslator") {
             groupId = "net.georgekent.lib"
             artifactId = "aura_translator"
-            version = "1.3.0"
+            version = "1.4.0"
             from(components["java"])
         }
     }
