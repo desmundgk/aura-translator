@@ -61,7 +61,6 @@ object StatusTranslator {
         return dp
     }
 
-    @JvmStatic
     fun toNodes(input: String): JsonNode {
         val mapper: ObjectMapper = CBORMapper()
         val byteArrayValueShort = input.decodeHex()
