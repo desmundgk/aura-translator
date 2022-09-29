@@ -1,8 +1,9 @@
+package translator
+
 import Util.decodeHex
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.cbor.databind.CBORMapper
-import model.Reading
 import model.Status
 
 /* This is a translator for LWM2M object 10376 instance 1 Record object */

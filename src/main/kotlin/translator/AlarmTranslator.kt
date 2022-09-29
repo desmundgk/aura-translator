@@ -1,3 +1,5 @@
+package translator
+
 import Util.decodeHex
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.cbor.databind.CBORMapper
