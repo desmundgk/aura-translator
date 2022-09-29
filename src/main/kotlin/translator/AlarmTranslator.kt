@@ -15,7 +15,12 @@ object AlarmTranslator {
         val byteArrayValueShort = input.decodeHex()
         val offset = 0
         val list = mapper.readValue(byteArrayValueShort, offset, byteArrayValueShort.size, List::class.java)
-        val alarmRaw = list[0] as Int
+        var alarmRaw = 0
+        if (list[0] is Float) {
+            alarmRaw = (list[0] as Float).toInt()
+        } else if (list[0] is Int) {
+            alarmRaw = list[0] as Int
+        }
         val alarmBinary = alarmRaw.toString(2).toLong()
         val backFlowReading = list[1] as Float
         return AlarmRaw(alarmBinary, backFlowReading)

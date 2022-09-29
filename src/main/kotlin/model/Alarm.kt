@@ -29,17 +29,17 @@ data class Alarm(
             .map {
                 it.digitToInt() == 1
             }
-        magnetTamper = rawAlarm[10]
-        tiltDetection = rawAlarm[9]
-        wireCutDetection = rawAlarm[8]
-        faultySensor = rawAlarm[7]
-        batteryLow = rawAlarm[6]
-        backFlowDetection = rawAlarm[5]
-        burstDetection = rawAlarm[4]
-        noFlowDetection = rawAlarm[3]
-        leakageDetection = rawAlarm[2]
-        rebootDetection = rawAlarm[1]
         nonRealtimeBackFlowDetection = rawAlarm[0]
+        rebootDetection = rawAlarm[1]
+        leakageDetection = rawAlarm[2]
+        noFlowDetection = rawAlarm[3]
+        burstDetection = rawAlarm[4]
+        backFlowDetection = rawAlarm[5]
+        batteryLow = rawAlarm[6]
+        faultySensor = rawAlarm[7]
+        wireCutDetection = rawAlarm[8]
+        tiltDetection = rawAlarm[9]
+        magnetTamper = rawAlarm[10]
         backFlowReading = alarm.backFlowReading
     }
 }
